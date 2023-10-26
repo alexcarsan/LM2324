@@ -1,0 +1,13 @@
+body{
+    background-color: darkgray;
+}
+
+h1{
+    color: darkslateblue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+p{
+    color: limegreen;
+    background-color: darkslategrey
+}
