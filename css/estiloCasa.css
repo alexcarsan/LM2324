@@ -1,0 +1,36 @@
+#fachada {
+    background-color: mediumslateblue;
+    width: 75%;
+    height: 550px;
+    margin-top: 12%;
+    margin-bottom: 12%;
+    margin-left: 12%;
+    margin-right: 10%;
+}
+
+#ventana1 {
+    background-color: burlywood;
+    width: 20%;
+    height: 30%;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+#cuadroVentana {
+    background-color: mediumaquamarine;
+    width: 40%;
+    height: 40%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+#puerta {
+    background-color: tan;
+    width: 30%;
+    height: 50%;
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 5%;
+}
