@@ -1,0 +1,17 @@
+#banner {
+    background: url(../LM2324/banner.png) center;
+    position: fixed;
+    margin: 0 auto;
+    background-color: #d9d9d9;
+    width: 100%;
+    height: 100px;
+    z-index: 1;
+}
+
+*{
+    margin: 0;
+}
+
+#texto {
+    top: 70px;
+}
