@@ -1,0 +1,59 @@
+body {
+    background-color: antiquewhite;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.borde {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    background-color: lightgreen;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.caja1 {
+    border: 4px solid black;
+    background-color: lightblue;
+    text-align: center;
+    line-height: 150px;
+    grid-column: span 3;
+}
+.caja2 {
+    border: 4px solid black;
+    background-color: lightgoldenrodyellow;
+    text-align: center;
+    line-height: 150px;
+    grid-column: span 2;
+}
+.caja3 {
+    border: 4px solid black;
+    background-color: lightsalmon;
+    text-align: center;
+    line-height: 150px;
+    grid-column: span 1;
+}
+.caja4-10 {
+    border: 4px solid black;
+    background-color: lightgray;
+    text-align: center;
+    line-height: 150px;
+    grid-column: span 1;
+}
+.caja11 {
+    border: 4px solid black;
+    background-color: lightgray;
+    text-align: center;
+    line-height: 150px;
+    grid-column: span 2;
+}
+.caja12 {
+    border: 4px solid black;
+    background-color: lightseagreen;
+    text-align: center;
+    line-height: 150px;
+    grid-column: span 3;
+}
