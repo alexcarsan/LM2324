@@ -1,0 +1,90 @@
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    background-color: white;
+    font-family: "Century Gothic", helvetica, arial, sans-serif;
+    font-size: 1.1em;
+}
+
+header {
+    text-align: center;
+    background-color: darkgray;
+}
+
+.central {
+    display: flex;
+}
+
+footer {
+    text-align: center;
+    background-color: darkgoldenrod;
+}
+
+footer a{
+    color: blue;
+}
+
+nav {
+    background-color: darkcyan;
+    width: 15em;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+nav a {
+    display: block;
+    padding: 0.5em 1em;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 640px) {
+    .central {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav {
+        width: 90%; /*Si se deja como "auto" no toma el tamaño total del contenedor*/
+    }
+
+    section {
+        width: 90%; /*Si se deja como "auto" no toma el tamaño total del contenedor*/
+    }
+}
+
+@media print {
+    nav {display: none;}
+}
+
+@media print {body {font-family: "Times New Roman", Times, serif;}
+}
+
+section {
+    background-color: darkolivegreen;
+    width: fit-content;
+}
+
+section p::first-letter {
+    font-size: 2em;
+    color: darkgray;
+}
+
+img {
+    float: left;
+    margin-top: 10px;
+    margin-right: 10px;
+    border: 5px solid goldenrod;
+    border-radius: 2vh;
+    max-width: 100%; 
+}
+
+header, nav, section, footer {
+    padding: 20px;
+    margin: 1px;
+    border: 2px solid whitesmoke;
+    border-radius: 10px;
+    color: white;
+}
