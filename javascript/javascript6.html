@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 6</title>
+    <script src="javascript6.js"></script>
+    <style>
+        #caja-roja {
+        height: 100px;
+        width: 100px;
+        background-color: red;
+        border-radius: 50%;
+        margin: 10px 10px;
+        }
+
+        #caja-verde {
+        height: 100px;
+        width: 100px;
+        background-color: green;
+        border-radius: 50%;
+        margin: 10px 10px;
+        }
+
+        #caja-azul {
+        height: 100px;
+        width: 100px;
+        background-color: blue;
+        border-radius: 50%;
+        margin: 10px 10px;
+        }
+
+        #contenedor {
+            display: flex;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Círculos</h1>
+
+    <div id="contenedor">
+
+    <div id="caja-roja"></div>
+
+    <div id="caja-verde"></div>
+    
+    <div id="caja-azul"></div>
+    
+    </div>
+
+    <button type="button" onclick='document.getElementById("caja-roja").style.display="none"'>Ocultar</button>
+    <button type="button" onclick='document.getElementById("caja-roja").style.display="block"'>Mostrar</button>
+
+    <button type="button" onclick='document.getElementById("caja-verde").style.display="none"'>Ocultar</button>
+    <button type="button" onclick='document.getElementById("caja-verde").style.display="block"'>Mostrar</button>
+
+    <button type="button" onclick='document.getElementById("caja-azul").style.display="none"'>Ocultar</button>
+    <button type="button" onclick='document.getElementById("caja-azul").style.display="block"'>Mostrar</button>
+
+</body>
+</html>
