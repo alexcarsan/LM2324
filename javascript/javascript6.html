@@ -30,10 +30,13 @@
         margin: 10px 10px;
         }
 
-        #contenedor {
+        .contenedor {
             display: flex;
         }
-
+        button {
+            width:100px;
+            margin: 10px 10px;
+        }
     </style>
 
 </head>
@@ -42,7 +45,7 @@
 
     <h1>Círculos</h1>
 
-    <div id="contenedor">
+    <div class="contenedor">
 
     <div id="caja-roja"></div>
 
@@ -52,14 +55,17 @@
     
     </div>
 
-    <button type="button" onclick='document.getElementById("caja-roja").style.display="none"'>Ocultar</button>
-    <button type="button" onclick='document.getElementById("caja-roja").style.display="block"'>Mostrar</button>
+    <div class="contenedor">
+        <button onclick="ocultar('caja-roja')">Ocultar rojo</button>
+        <button onclick="ocultar('caja-verde')">Ocultar verde</button>
+        <button onclick="ocultar('caja-azul')">Ocultar azul</button>
+    </div>
 
-    <button type="button" onclick='document.getElementById("caja-verde").style.display="none"'>Ocultar</button>
-    <button type="button" onclick='document.getElementById("caja-verde").style.display="block"'>Mostrar</button>
-
-    <button type="button" onclick='document.getElementById("caja-azul").style.display="none"'>Ocultar</button>
-    <button type="button" onclick='document.getElementById("caja-azul").style.display="block"'>Mostrar</button>
+    <div class="contenedor">
+        <button onclick="mostrar('caja-roja')">mostrar rojo</button>
+        <button onclick="mostrar('caja-verde')">mostrar verde</button>
+        <button onclick="mostrar('caja-azul')">mostrar azul</button>
+    </div>
 
 </body>
 </html>
