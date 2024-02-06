@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calificaciones</title>
+    <script src="calificaciones.js"></script>
+</head>
+<body>
+    <h1>Calculadora de calificaciones</h1>
+    <div>
+        <label for="">Introduce una calificación:</label>
+        <input type="number" id="calificacion" min="0" max="10">
+        <button onclick="agregarCalificacion()">Agregar</button>
+    </div>
+    <div>
+        <button onclick="borrarCalificaciones()">Borrar calificaciones</button>
+        <button onclick="calcularMedia()">Calcular media</button>
+    </div>
+    <div id="mensaje"></div>
+
+</body>
+</html>
