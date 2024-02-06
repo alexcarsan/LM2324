@@ -1,45 +1,46 @@
-let calificaciones = [];
+let lista = [];
 
-function agregarCalificacion() {
-    const calificacionInput = document.getElementById('calificacion');
-    const calificacion = parseFloat(calificacionInput.value);
+function introducir() {
+    var calificacion = document.getElementById("numero").value;
 
-    if (isNaN(calificacion) || calificacion < 0 || calificacion > 10) {
-        mostrarMensajeError('La calificación debe ser un número entre 0 y 10.');
-        return;
+    if (calificacion === "") {
+        alert("Introduce una calificación");
+    } else {
+        lista.push(parseFloat(calificacion));
+        mostrarListado();
+        document.getElementById("numero").value = "";
+    }
+}
+
+function tipoLista() {
+    let nota = "<ul>";
+    for (let i = 0; i < lista.length; i++) {
+        nota += "<li>" + lista[i] + "</li>";
+    }
+    nota += "</ul>";
+    document.getElementById("listado").innerHTML = nota;
+}
+
+function borrar() {
+    lista.length = 0;
+    tipoLista();
+    resultado();
+}
+
+function media() {
+    let suma = 0;
+    for (let i = 0; i < lista.length; i++) {
+        suma += lista[i];
     }
 
-    calificaciones.push(calificacion);
-    mostrarMensajeExito(`Calificación ${calificacion} agregada.`);
-    calificacionInput.value = '';
-}
-
-function borrarCalificaciones() {
-    calificaciones = [];
-    mostrarMensajeExito('Calificaciones borradas.');
-}
-
-function calcularMedia() {
-    if (calificaciones.length === 0) {
-        mostrarMensajeError('No hay calificaciones para calcular.');
-        return;
+    let media = 0;
+    if (lista.length > 0) {
+        media = suma / lista.length;
     }
 
-    const sumaCalificaciones = calificaciones.reduce((a, b) => a + b, 0);
-    const media = sumaCalificaciones / calificaciones.length;
-    mostrarMensajeExito(`La media de las calificaciones es: ${media.toFixed(2)}`);
+    resultado(media);
 }
 
-function mostrarMensajeError(mensaje) {
-    mostrarMensaje(mensaje, 'red');
-}
-
-function mostrarMensajeExito(mensaje) {
-    mostrarMensaje(mensaje, 'green');
-}
-
-function mostrarMensaje(mensaje, color) {
-    const mensajeDiv = document.getElementById('mensaje');
-    mensajeDiv.textContent = mensaje;
-    mensajeDiv.style.color = color;
+function resultado(media) {
+    document.getElementById("resultado").innerHTML = "La meedia es: " + media;
 }
