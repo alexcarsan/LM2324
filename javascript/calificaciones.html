@@ -5,15 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calificaciones</title>
     <script src="calificaciones.js"></script>
+    <style>
+        #aviso {
+            color: red;
+        }
+    </style>
 </head>
+
 <body>
     <h1>Calculadora de medias</h1>
-    <input type="number" id="numero" placeholder="Introducir calificación">
+    <input type="text" id="numero" placeholder="Introducir calificación">
+    <p id="aviso"></p>
+    <p id="notas"></p><!-- listado de las calificaciones-->
+    <p id="resultado"></p><!-- resultado de la media-->
     <button onclick="introducir()" id="boton1">Introducir numero</button>
     <button onclick="borrar()" id="boton2">Borrar calificaciones</button>
-    <button onclick="media()" id="boton2">Calcular media</button>
-
-    <p id="listado"></p>
-    <p id="resultado"></p>
+    <button onclick="media()" id="boton3">Calcular media</button>
 </body>
 </html>

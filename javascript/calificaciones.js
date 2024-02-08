@@ -1,25 +1,22 @@
-let lista = [];
+var notas = [];
 
 function introducir() {
-    var calificacion = document.getElementById("numero").value;
-
-    if (calificacion === "") {
-        alert("Introduce una calificación");
-    } else {
-        lista.push(parseFloat(calificacion));
-        mostrarListado();
-        document.getElementById("numero").value = "";
+    let numero = parseFloat(document.getElementById("numero").value);
+    document.getElementById("aviso").innerHTML = "";
+    if (isNaN(numero)){
+        document.getElementById("aviso").innerHTML = "Debes introducir un calificación entre 0 y 10.";
+    }
+    else{
+        if (numero<0 || numero>10) {
+            document.getElementById("aviso").innerHTML = "Debes introducir un calificación entre 0 y 10.";
+        }
+        else {
+            notas.push(numero);
+            document.getElementById("notas").innerHTML = notas;
+        }
     }
 }
 
-function tipoLista() {
-    let nota = "<ul>";
-    for (let i = 0; i < lista.length; i++) {
-        nota += "<li>" + lista[i] + "</li>";
-    }
-    nota += "</ul>";
-    document.getElementById("listado").innerHTML = nota;
-}
 
 function borrar() {
     lista.length = 0;
@@ -28,19 +25,10 @@ function borrar() {
 }
 
 function media() {
-    let suma = 0;
-    for (let i = 0; i < lista.length; i++) {
-        suma += lista[i];
+    let total = 0.0;
+    for (var i=0;i<notas.length;i++){
+        total = total+notas[i];
     }
-
-    let media = 0;
-    if (lista.length > 0) {
-        media = suma / lista.length;
-    }
-
-    resultado(media);
-}
-
-function resultado(media) {
-    document.getElementById("resultado").innerHTML = "La meedia es: " + media;
+    total = total/notas.length;
+    document.getElementById("resultado").innerHTML = total; 
 }
