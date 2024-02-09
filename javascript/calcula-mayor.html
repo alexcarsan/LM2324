@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayor de un array</title>
+    <script src="calcula-mayor.js"></script>
+    <script>
+        var lista=[];
+        function anadir(){
+            let numero = parseFloat(document.getElementById("numero").value);
+            lista.push(numero);
+            document.getElementById("numeros").innerHTML = lista;
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>Cálculo del elemento mayor de un array</h1>
+    <input type="text" placeholder="Introduzca un número" id="numero">
+    <p id="resultado"></p>
+    <p id="numeros"></p>
+
+    <button onclick="imprimir(lista)">Imprimir elementos</button>
+    <button onclick="anadir()">Añadir número</button>
+    <button onclick="var maximo=mayor(lista);document.getElementById('resultado').innerHTML=maximo">Calcular máx</button>
+    <button onclick="var minimo=menor(lista);document.getElementById('resultado').innerHTML=minimo">Calcular mín</button>
+
+
+</body>
+</html>
