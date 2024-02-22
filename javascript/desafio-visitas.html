@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío visitas</title>
+</head>
+
+<body>
+    
+    <p id="resultado"></p>
+
+    <script>
+
+        function contador() {
+            let visitas = parseInt(localStorage.getItem('visitas'));
+            if (!localStorage.getItem('visitas')) {
+                localStorage.setItem('visitas', 1);
+                document.getElementById("resultado").innerHTML = "Es la primera vez que visitas esta página."
+            } else {
+                visitas = visitas+1;
+                localStorage.setItem('visitas', visitas);
+                document.getElementById('resultado').innerHTML = "Has visitado esta página " + localStorage.getItem('visitas') + " veces.";
+            }
+        }
+        window.onload = contador();
+
+    </script>
+
+</body>
+</html>

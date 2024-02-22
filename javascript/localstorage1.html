@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage 1</title>
+</head>
+
+<body>
+
+    <input id="nom" type="text" placeholder="Escriba su nombre">
+    <button onclick="guardar()">Guardar</button>
+    <button onclick="borrar()">Borrar</button>
+
+    <script>
+
+        function cargaPagina(){
+            let valor = localStorage.getItem("nombre");
+            if (valor!=null){
+                alert("Bienvenidx "+valor);
+            }
+        }
+
+        function guardar(){
+            let nom = document.getElementById("nom").value;
+            localStorage.setItem("nombre",nom);
+        }
+
+        function borrar(){
+            localStorage.clear();
+        }
+        window.onload = cargaPagina();
+    </script>
+
+</body>
+</html>
