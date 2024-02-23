@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tareas</title>
+</head>
+
+<body>
+
+    <h1>Lista de tareas</h1>
+
+    <input type="text" id="tareas" placeholder="Introduzca una tarea">
+    <button onclick="agregarTarea()">Agregar tarea</button>
+    <ul id="lista"></ul>
+
+    <script>
+
+        function cargaPagina(){
+            let valor = localStorage.getItem("Tarea");
+            if(valor!=null){
+
+            }   
+        }
+
+        function agregarTarea(){
+            let tarea = document.getElementById("tareas").value;
+            localStorage.setItem("Tarea",tarea);
+            var lista = document.getElementById("lista");
+            var elemento = document.createElement("li");
+                elemento.innerHTML = tarea
+                lista.appendChild(elemento);
+        }
+        window.onload = cargaPagina();
+
+    </script>
+
+</body>
+</html>
