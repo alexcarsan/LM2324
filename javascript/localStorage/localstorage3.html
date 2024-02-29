@@ -16,6 +16,7 @@
 
     <script>
 
+        /*
         function cargaPagina(){
             let valor = localStorage.getItem("Tarea");
             if(valor!=null){
@@ -31,6 +32,30 @@
                 elemento.innerHTML = tarea
                 lista.appendChild(elemento);
         }
+        */
+
+        function cargaPagina(){
+            let tareas = localStorage.getItem("Tareas");
+            if(tareas){
+                tareas.split(',').forEach(tarea => {
+                    var lista = document.getElementById("lista");
+                    var elemento = document.createElement("li");
+                    elemento.textContent = tarea;
+                    lista.appendChild(elemento);
+                });
+            }   
+        }
+
+        function agregarTarea(){
+            let tarea = document.getElementById("tareas").value;
+            let tareas = localStorage.getItem("Tareas") || '';
+            tareas += (tareas ? ',' : '') + tarea;
+            localStorage.setItem("Tareas", tareas);
+            var lista = document.getElementById("lista");
+            var elemento = document.createElement("li");
+            elemento.textContent = tarea;
+            lista.appendChild(elemento);
+        }    
         window.onload = cargaPagina();
 
     </script>
