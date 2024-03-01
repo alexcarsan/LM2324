@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuFitness</title>
+</head>
+
+<body>
+
+    <input type="text" id="peso" placeholder="Introduzca su peso">
+
+    <script>
+
+        var peso = document.getElementById("peso").value;
+
+        function guardarPeso(){
+            let ultimoPeso = peso;
+            localStorage.setItem("Peso", peso);
+        }
+
+        function aumentoPeso(){
+
+
+            if(peso=null){
+                console.log="No hay peso registrado."
+            }
+            else(parseFloat(peso) > localStorage.getItem("Peso"));{
+                console.log="Hay que apretarse el cinturón.";
+            }
+        }
+
+        function perdidaPeso(){
+
+            if(peso=null){
+                console.log="No hay peso registrado."
+            }
+            else(parseFloat(peso) < localStorage.getItem("Peso"));{
+                console.log="Vas por el buen camino!";
+            }
+        }
+
+    </script>
+
+</body>
+</html>
