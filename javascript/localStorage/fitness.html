@@ -8,37 +8,44 @@
 
 <body>
 
-    <input type="text" id="peso" placeholder="Introduzca su peso">
+    <h1>Bienvenido a TuFitness</h1>
+    <img src="fitness.avif" alt=""><br>
+    <input type="text" id="pesoActual" placeholder="Introduzca su peso">
+    <button onclick="guardar()">Guardar progreso</button>
+    <p id="parrafo"></p>
 
     <script>
 
-        var peso = document.getElementById("peso").value;
-
-        function guardarPeso(){
-            let ultimoPeso = peso;
-            localStorage.setItem("Peso", peso);
-        }
-
-        function aumentoPeso(){
-
-
-            if(peso=null){
-                console.log="No hay peso registrado."
+        let pesoAnterior=100000;
+        function guardar(){
+            let pesoActual = document.getElementById("pesoActual").value;
+            if (pesoActual!=""){
+                localStorage.setItem("peso", pesoActual);
+                if (pesoActual>pesoAnterior){
+                    document.getElementById("parrafo").innerHTML = "Hay que apretarse el cinturón"
+                }
+                if (pesoActual==pesoAnterior)
+                {
+                    document.getElementById("parrafo").innerHTML = "Pesas lo mismo que la última vez"
+                }
+                if (pesoActual<pesoAnterior)
+                {
+                    document.getElementById("parrafo").innerHTML = "¡Vas por el buen camino!";
+                }
             }
-            else(parseFloat(peso) > localStorage.getItem("Peso"));{
-                console.log="Hay que apretarse el cinturón.";
-            }
-        }
-
-        function perdidaPeso(){
-
-            if(peso=null){
-                console.log="No hay peso registrado."
-            }
-            else(parseFloat(peso) < localStorage.getItem("Peso"));{
-                console.log="Vas por el buen camino!";
+            else{
+                document.getElementById("parrafo").innerHTML = "Tienes que introducir tu peso en kg"
             }
         }
+        function cargaPagina(){
+            var almacenado = localStorage.getItem("peso");
+            if (almacenado!=null)
+            {
+                pesoAnterior = parseFloat(almacenado);
+                document.getElementById("parrafo").innerHTML="Tu peso anterior era " + pesoAnterior + "kg"
+            }
+        }
+        window.onload=cargaPagina();
 
     </script>
 
