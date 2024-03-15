@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distancias</title>
+    <style>
+        #error{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Calculadora de distancias</h1>
+
+    <input type="text" id="distancia" placeholder="Introduzca la distancia a calcular">
+    <button onclick="calcula()">Calcular</button>
+    <p id="error"></p>
+    <p id="resultado"></p>
+
+    <script>
+        var distancias2 = [];
+
+        function calcula() {
+            let distancia = parseFloat(document.getElementById("distancias").value);
+            document.getElementById("error").innerHTML = "";
+            if (isNaN(distancia) || distancia == ""){
+                document.getElementById("error").innerHTML = "Debes introducir una distancia válida.";
+            }
+            else{
+                distancias2.push(distancia);
+                distancias2.split(",");
+                total= distancias2[0]+distancias2[1];
+                document.getElementById("resultado").innerHTML = total; 
+            }
+        }
+
+    </script>
+
+</body>
+</html>
